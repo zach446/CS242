@@ -10,21 +10,26 @@ import java.util.Random;  //Imports the Random Class
  * @return [description]
  */
 public class Die (){
-private static int rollVal = 0;
-private static int topVal;
-/**
- * [roll description]
- * @return [description]
- */
-public int roll(int sides){
-        Random r = new Random();
-        this.rollVal = r.nextInt(sides)+1;
-}
-/**
- * [getTop description]
- * @return [description]
- */
-public int getTop(){
+	private static Random r = new Random();
+	private int sides;
+	private int rollVal;
+	private int topVal;
+	
+	public Die(){
+		
+	}
+	/**
+	 * [roll description]
+	 * @return [description]
+	 */
+	public int roll(int sides){
+		this.rollVal = r.nextInt(sides)+1;
+	}
+	/**
+	 * [getTop description]
+	 * @return [description]
+	 */
+	public int getTop(){
 
-}
+	}
 }
