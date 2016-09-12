@@ -31,7 +31,6 @@ public class Die{
 	 * @return [description]
 	 */
 	public int getTop(){
-		System.out.println("The Dice reads " + topVal);
 		return this.topVal;
 	}
 }
