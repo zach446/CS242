@@ -22,17 +22,16 @@ public class Die{
 	 */
 	public Die(){
 		this.sides = 6;
-		this.topVal = 0;
-
-
+		this.topVal = 1;
 	}
 	
 	/**
 	 * [roll description] Rolls the die to find a random number between 1 and the number of sides
 	 * @return [description]
 	 */
-	public int roll(int sides, int topVal){
-		return this.topVal = r.nextInt(sides)+1;
+	public int roll(){
+		this.topVal = r.nextInt(sides)+1;
+		return topVal;
 	}
 	/**
 	 * [getTop description]  Looks at the topvalue of the die

@@ -43,4 +43,25 @@ public class Circle {
 				((float)(Math.PI*(double)this.radius*(double)this.radius));
 		return area;
 	}
+	
+	public boolean equals(Circle other){
+		return this.radius == other.radius &&
+				this.center.x == other.center.x &&
+				this.center.y == other.center.y;
+	}
+	
+	// Overides the hascode of the constructor
+	// Refer to Lecture 5 Slides
+//	public int hashCode(){
+//		return 0x20;
+//	}
+	
+	/*
+	 * Prints a string representation of the Object.
+	 * Can be found in Lecture 5 slides
+	 */
+	
+//	public String toString(){
+//		return "The circle has radius " + this.radius + ", center: (" + this.center.x + ", " + this.center.y + "), and area is: " + this.computeArea(); 
+//	}
 }
