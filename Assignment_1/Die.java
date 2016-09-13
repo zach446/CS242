@@ -10,15 +10,23 @@ import java.util.Random;  //Imports the Random Class
  * @return [description]
  */
 public class Die{
-//	private static Random r = new Random();
-//	private int sides;
-//	private int topVal;
+	private static Random r = new Random();
+	private int sides;
+	private int topVal;
+	
 	// Need to ask Natasha what I am doing wrong
+	
+	/**
+	 * [Die description]
+	 * @return [description]
+	 */
 	public Die(){
-		return Random r = new Random();
-		return int sides;
-		return int topVal;
+		this.sides = 6;
+		this.topVal = 0;
+
+
 	}
+	
 	/**
 	 * [roll description] Rolls the die to find a random number between 1 and the number of sides
 	 * @return [description]
