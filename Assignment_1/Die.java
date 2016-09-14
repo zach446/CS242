@@ -1,24 +1,26 @@
 /**
  * @ author Zachary Heilman
- * @ date 09/11/16
+ * @ date 09/13/16
  */
 
-import java.util.Random;  //Imports the Random Class
+import java.util.Random;  /*Imports the Random Class*/
 
 /**
- * [Die description]
- * @return [description]
+ * Die Class will run the dice rolling system
+ * 
  */
 public class Die{
 	private static Random r = new Random();
 	private int sides;
 	private int topVal;
 	
-	// Need to ask Natasha what I am doing wrong
-	
 	/**
-	 * [Die description]
-	 * @return [description]
+	 * Die constructor will assign the values to sides and topVal.
+	 * The value of sides determines the amount of sides on the die.  While
+	 * the value of topVal initiates the value.  Since the random number
+	 * generator counts from 1 - 6 it is important to initiate topVal to 1.  This
+	 * will allow the random number generator hold its value from 1-6.
+	 * 
 	 */
 	public Die(){
 		this.sides = 6;
@@ -26,16 +28,19 @@ public class Die{
 	}
 	
 	/**
-	 * [roll description] Rolls the die to find a random number between 1 and the number of sides
-	 * @return [description]
+	 * Rolls the die to determine the number on the die.  The value of sides indicates
+	 * the range of the random number generator and topVal is the variable that will store
+	 * the value of the die.
+	 * @return 	the top value of the 6-sided die.
 	 */
 	public int roll(){
 		this.topVal = r.nextInt(sides)+1;
 		return topVal;
 	}
+	
 	/**
-	 * [getTop description]  Looks at the topvalue of the die
-	 * @return [description]
+	 * Is looking at the top value of the 6-sided die to determine what the value rolled is.
+	 * @return the top value of the 6-sided die.
 	 */
 	public int getTop(){
 		return this.topVal;

@@ -1,0 +1,32 @@
+Zachary Heilman
+09/13/16
+Assignment 1
+
+For this assignment I have:
+Die Class - Which will run the dice rolling system
+TestDie Class - Which tests the Die Class to make sure that the probability is mildly correct
+Die Constructor = Which initializes the global variables that will be used in later methods
+roll() method - Which simulates the rolling of a 6 sided die
+getTop() method - Which obtains the top value of the die
+
+Testing Strategy:
+
+To determine ifmy system is balanced, I created a test environment that would determine the probability
+of rolling the die. This was done by rolling the die 1000 times and calculating the probability of each value
+obtained.  This would allow for me to use the Die constructor with its methods to determine if they are working properly,
+along with analyzing the outputs to see if all get a 1/6 chance of being rolled.  Since it is random they were not perfectly
+1/6 like it should be, but they were very close.
+
+The output of my test case are as follows:
+
+The value of 1/6 is .166
+The probability of getting a 1 is: 0.154
+The probability of getting a 2 is: 0.159
+The probability of getting a 3 is: 0.186
+The probability of getting a 4 is: 0.151
+The probability of getting a 5 is: 0.184
+The probability of getting a 6 is: 0.166
+
+
+This represents that the die would roll close to the 1/6 probability that a 6 sided die would be 
+expected to have.
