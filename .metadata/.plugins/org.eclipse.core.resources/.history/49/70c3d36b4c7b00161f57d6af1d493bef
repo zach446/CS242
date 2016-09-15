@@ -1,0 +1,4 @@
+
+public class Shape {
+	protected int shapeType = 0;
+}
