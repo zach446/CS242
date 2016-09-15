@@ -1,0 +1,10 @@
+package Shape_2_Abstract_Class;
+
+public class TestShape {
+	public static void main(String[] args){
+		Shape t = new SolidTriangle(2.0f, 1.5f);
+		System.out.println(t.computeArea());
+		t.drawShape();
+		t.displayNumberOfSides();
+	}
+}
