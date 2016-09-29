@@ -1,0 +1,40 @@
+package Working_With_Exceptions;
+import java.io.*;
+
+// Write an array of characters to a file
+// Note: this code will not compile!
+public class WriteToAFile {
+		
+	public static void main( String[] args ) {
+		
+		final int numchars = 5;
+		
+		char[] outs = new char[numchars]; // array to be written out
+		
+		// Make sure the array is filled
+		outs[0] = 'H'; outs[1] = 'E'; outs[2] = 'L'; 
+		outs[3] = 'L'; outs[4] = 'O';
+		
+		try{
+		
+		FileWriter writer = new FileWriter("output.txt");
+		
+		// Need to iterate over all the characters, and
+		// use the FileWriter.write() method to write each
+		// character to the file opened by the FileWriter
+		// object. Look at the Javadoc for the write() method.
+
+		for (int i = 0; i < numchars; i++){
+			writer.write(outs[i]);
+		}
+		writer.close();
+		} catch (IOException ioe){
+			System.err.println("Something went wrong");
+		} catch (ArrayIndexOutOfBoundsException aioobe){
+			System.err.println("Index is out of bounds");
+		}
+		
+	}
+
+}
+

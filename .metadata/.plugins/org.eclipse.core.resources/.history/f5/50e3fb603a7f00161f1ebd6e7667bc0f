@@ -1,0 +1,35 @@
+
+package Working_With_Exceptions;
+import java.io.*;
+
+// Note: this code will not compile!
+public class ReadAFile {
+	public static void main( String[] args ) {
+
+		String fileName = "input.txt"; // Name of file to read
+
+		// Use a FileReader object to open the file
+		FileReader reader = new FileReader(fileName);
+		
+		// Boolean variable to read till the end of the file
+		boolean doneReadingFile = false;
+
+		// Loop till the file is done reading
+		// (i.e., till the end of the file is reached)
+		while (!doneReadingFile) {
+
+			// Need to enter code here that uses FileReader.read()
+			// to read the next byte and print it as a 
+			// character to screen. Look at the Javadoc for the
+			// read() method: it returns either the next character
+			// cast as an integer or -1 if the end-of-file is reached.
+			
+			
+		}
+		reader.close();
+		System.out.println(); // print empty newline
+
+	}
+}
+
+
