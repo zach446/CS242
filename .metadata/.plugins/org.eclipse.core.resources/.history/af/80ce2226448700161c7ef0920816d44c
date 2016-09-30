@@ -1,0 +1,125 @@
+package Dice;
+/**
+ * @ author Zachary Heilman
+ * @ date 09/13/16
+ */
+
+import java.lang.*;
+import java.util.Random;  /*Imports the Random Class*/
+
+/**
+ * Die Class will run the dice rolling system
+ * 
+ */
+public class Die implements Comparable<Die> {
+	protected static Random r = new Random();
+	protected int sides;
+	protected int topVal;
+	
+	/**
+	 * Die constructor will assign the values to sides and topVal.
+	 * The value of sides determines the amount of sides on the die.  While
+	 * the value of topVal initiates the value.  Since the random number
+	 * generator counts from 1 - 6 it is important to initiate topVal to 1.  This
+	 * will allow the random number generator hold its value from 1-6.
+	 * 
+	 * The constructor will call the second constructor and give it a value of 6.  
+	 * This is because, as the default constructor it has a default of 6 sides, and 
+	 * gives this to the secondary constructor.
+	 */
+	public Die(){
+		this(6);
+	}
+	
+	/**
+	 * This is the second Die Constructor.  It takes in n amount of sides
+	 *
+	 */
+	public Die(int n){
+		this.sides = n;
+		this.topVal = 1;
+
+	}
+	
+	/**
+	 * Rolls the die to determine the number on the die.  The value of sides indicates
+	 * the range of the random number generator and topVal is the variable that will store
+	 * the value of the die.
+	 * @return 	the top value of the 6-sided die.
+	 */
+	public int roll(){
+		if(sides < 3){
+			throw new IllegalArgumentException("Must have more than 3 sides. You have " + sides + " sides.");
+		} else {
+		this.topVal = r.nextInt(sides)+1;
+		return topVal;
+		}
+	}
+	
+	/**
+	 * Is looking at the top value of the 6-sided die to determine what the value rolled is.
+	 * @return the top value of the 6-sided die.
+	 */
+	public int getTop(){
+		return this.topVal;
+	}
+	
+	/**
+	 * Tests to make sure that the number of sides and the top face are the same
+	 * 
+	 * @return A True or False depending on if the value of sides and topVal are equal
+	 * to the other.
+	 *
+	 */
+	public boolean equals(Object other){
+		Die otherDie = (Die)other;
+		return this.sides == otherDie.sides &&
+				this.topVal == otherDie.topVal;
+	}
+	
+	/**
+	 * compareTo is used to compare objects to other objects.
+	 * In this case, it will compare the die value.  
+	 *
+	 *@return Will return the value of the compareTo.  Which will be -1 if the sides are less than the other sides
+	 *0 if the sides are equal
+	 *or 1 if the sides are greater than the other sides
+	 */
+	public int compareTo(Die otherDie){
+		if (this.sides < otherDie.sides){
+			return -1;
+		} else if(this.sides == otherDie.sides){
+			return 0;
+		} else {
+			return 1;
+		}
+	}
+	
+	/**
+	 * HashCode will be called because of the equals class.  Whenever an object is called more than once
+	 * the hashCode must return the same integer provided.  This will show that the values are truely equal.
+	 * 
+	 * The value of the return should equal to the values of sides and topVal.  If they are different then we know
+	 * that they do not equal.
+	 * 
+	 * @return Will return the values of sides and topVal.
+	 *
+	 */
+	public int hashCode(){
+		int result = 7;
+		result = 31*result + sides;
+		result = 37*result + topVal;
+		return result;
+	}
+	
+	/**
+	 * Will return a string that indicates the status f the die.
+	 * 
+	 * @return Will describe the status of the Die.
+	 *
+	 */
+	public String toString(){
+		return "The die has " + this.sides + " sides and has an upward facing number of " + this.topVal;
+	}
+	
+}

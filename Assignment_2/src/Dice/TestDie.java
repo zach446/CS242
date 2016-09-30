@@ -1,9 +1,10 @@
-package Dice;
 /**
- * @author Zachary
- *
+ * @author Zachary Heilman
+ *  
  */
-import java.util.Random;  //Imports the Random Class
+package Dice;
+
+import java.lang.*;
 
 /**
  * 
@@ -50,5 +51,73 @@ public class TestDie{
 		System.out.println("The probability of getting a 4 is: " + fourCount/N);
 		System.out.println("The probability of getting a 5 is: " + fiveCount/N);
 		System.out.println("The probability of getting a 6 is: " + sixCount/N);
+		System.out.println("\n\n");
+		
+		
+		
+		/*The following counters are to help find the probability of the die rolls*/
+		float oneCount1 = 0;
+		float twoCount1 = 0;
+		float threeCount1 = 0;
+		float fourCount1 = 0;
+		float fiveCount1 = 0;
+		float sixCount1 = 0;
+		LoadedDie L1 = new LoadedDie();
+
+		for(int i = 0; i < N; i++){/*SImulates each die roll*/
+		L1.roll();
+		int topVal = L1.getTop();
+		/*IF statement determines which counter to increment*/
+			if(topVal == 1){
+				oneCount1 = oneCount1 + 1;
+			} else if(topVal == 2) {
+				twoCount1 = twoCount1 + 1;
+			} else if(topVal == 3){
+				threeCount1 = threeCount1 + 1;
+			} else if (topVal == 4){
+				fourCount1 = fourCount1 + 1;
+			} else if(topVal == 5){
+				fiveCount1 = fiveCount1 + 1;
+			} else if(topVal == 6){
+				sixCount1 = sixCount1 + 1;
+			} else {
+				System.out.println("There was an unexpected error");
+			}
+		}
+		System.out.println("The value of getting a 2 is .56");
+		System.out.println("The probability of getting a 1 is: " + oneCount1/N);
+		System.out.println("The probability of getting a 2 is: " + twoCount1/N);
+		System.out.println("The probability of getting a 3 is: " + threeCount1/N);
+		System.out.println("The probability of getting a 4 is: " + fourCount1/N);
+		System.out.println("The probability of getting a 5 is: " + fiveCount1/N);
+		System.out.println("The probability of getting a 6 is: " + sixCount1/N);
+		System.out.println("\n\n");
+		
+		
+		Die D2 = new Die(4);
+		Die D3 = new Die(5);
+		if (D2.equals(D3)){
+			System.out.println("The Dice match!");
+		} else {
+			System.out.println("The Dice do not match!");
+		}
+		
+		
+		LoadedDie L2 = new LoadedDie(6, 4, 90);
+		LoadedDie L3 = new LoadedDie(6, 5, 30);
+		if (L2.equals(L3)){
+			System.out.println("The Dice match!");
+		} else {
+			System.out.println("The Dice do not match!");
+		}
+		
+		// Will throw an exception since the value is not greater than 3
+		Die D4 = new Die(1);
+		D4.roll();
+		
+		// Will throw an exception since the value is not greater than 4
+		LoadedDie L4 = new LoadedDie(2,2,90);
+		L2.roll();		
+
 	}
 }

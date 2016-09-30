@@ -1,0 +1,102 @@
+package Dice;
+import java.lang.*;
+import java.util.Random;
+
+public class LoadedDie extends Die{
+
+	private int loadSide;
+	private int rollFactor;
+
+	public LoadedDie(){
+		this(6, 2, 56);
+	}
+
+	public LoadedDie(int n, int loadedSide, int loadFactor){
+		super.sides = n;
+		this.loadSide = loadedSide;
+		this.rollFactor = loadFactor;
+	}
+
+	public int roll(){
+		if(sides < 4){
+			throw new IllegalArgumentException("Must have more than 4 sides. You have " + sides + " sides.");
+		} else if(loadSide < 1 || loadSide > sides){
+			throw new IllegalArgumentException("Your loaded side must be between 1 and the number of sides on the die."
+					+ "  Your loaded side is " + loadSide + ".");
+		} else if(rollFactor < 0 || rollFactor > 100){
+			throw new IllegalArgumentException("Your load factor must be between 0 and 100.  Yours is " + rollFactor + ".");
+		}else {	
+			int result = r.nextInt(101);
+			if (result < this.rollFactor) {
+				super.topVal = super.r.nextInt(sides) + 1;
+				while(super.topVal == loadSide){
+					super.topVal = super.r.nextInt(sides) + 1;
+				}
+				return super.topVal;
+//			} else {
+//				super.topVal = loadSide;
+//				return super.topVal;
+			}
+		}
+	}
+	
+	public int getTop(){
+		return this.topVal;
+	}
+	
+	public boolean equals(Object other){
+		LoadedDie otherDie = (LoadedDie)other;
+		return this.sides == otherDie.sides &&
+				this.topVal == otherDie.topVal &&
+				this.loadSide == otherDie.loadSide &&
+				this.rollFactor == otherDie.rollFactor;
+	}
+	
+	/**
+	 * compareTo is used to compare objects to other objects.
+	 * In this case, it will compare the die value.  
+	 *
+	 *@return Will return the value of the compareTo.  Which will be -1 if the sides are less than the other sides
+	 *0 if the sides are equal
+	 *or 1 if the sides are greater than the other sides
+	 */
+	public int compareTo(Die otherDie){
+		if (this.sides < otherDie.sides){
+			return -1;
+		} else if(this.sides == otherDie.sides){
+			return 0;
+		} else {
+			return 1;
+		}
+	}
+	
+	/**
+	 * HashCode will be called because of the equals class.  Whenever an object is called more than once
+	 * the hashCode must return the same integer provided.  This will show that the values are truely equal.
+	 * 
+	 * The value of the return should equal to the values of sides and topVal.  If they are different then we know
+	 * that they do not equal.
+	 * 
+	 * @return Will return the values of sides and topVal.
+	 *
+	 */
+	public int hashCode(){
+		int result = 7;
+		result = 31*result + sides;
+		result = 31*result + topVal;
+		result = 31*result + rollFactor;
+		return result;
+	}
+	
+	/**
+	 * Will return a string that indicates the status f the die.
+	 * 
+	 * @return Will describe the status of the Die.
+	 *
+	 */
+	public String toString(){
+		return "The die has " + this.sides + " sides and has an upward facing number of " + this.topVal + ".  Which "
+				+ "is loaded to show " + this.loadSide + " with a percentage of " + this.rollFactor + "%";
+	}
+	
+}

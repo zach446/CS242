@@ -1,0 +1,29 @@
+package Dice;
+import java.lang.*;
+import java.util.Random;
+
+public class LoadedDie extends Die{
+	private static Random r = new Random();
+	private int sides;
+	private int topVal;
+	private int rollFactor;
+	
+	public LoadedDie(){
+		this(6, 2, 56);
+	}
+	
+	public LoadedDie(int n, int loadedSide, int loadFactor){
+		this.sides = n;
+		this.topVal = loadedSide;
+		int rollFactor = loadFactor;
+	}
+	
+	public int roll(){
+		if(sides < 4){
+			throw new IllegalArgumentException("Must have more than 4 sides. You have " + sides + " sides.");
+		} else {
+		this.topVal = r.nextInt(sides)+1;
+		return topVal;
+		}
+	}
+}

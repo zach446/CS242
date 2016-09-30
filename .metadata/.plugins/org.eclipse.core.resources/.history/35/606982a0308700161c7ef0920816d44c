@@ -1,0 +1,42 @@
+package Dice;
+import java.lang.*;
+import java.util.Random;
+
+public class LoadedDie extends Die{
+	private static Random r = new Random();
+	private int sides;
+	private int topVal;
+	private int loadSide;
+	private int rollFactor;
+	
+	public LoadedDie(){
+		this(6, 2, 56);
+	}
+	
+	public LoadedDie(int n, int loadedSide, int loadFactor){
+		this.sides = n;
+		this.topVal = 1;
+		this.loadSide = loadedSide;
+		this.rollFactor = loadFactor;
+	}
+	
+	public int roll(){
+		if(sides < 4){
+			throw new IllegalArgumentException("Must have more than 4 sides. You have " + sides + " sides.");
+		} else if(loadSide < 1 || loadSide > sides){
+			throw new IllegalArgumentException("Your loaded side must be between 1 and the number of sides on the die."
+					+ "  Your loaded side is " + loadSide + ".");
+		} else if(rollFactor < 0 || rollFactor > 100){
+			throw new IllegalArgumentException("Your load factor must be between 0 and 100.  Yours is " + rollFactor + ".");
+		}else {
+		
+		
+		int result = r.nextInt(101);
+		if (result < this.rollFactor) {
+			
+			return (result % 5)+1;
+		}
+		return loadSide;
+		}
+	}
+}
