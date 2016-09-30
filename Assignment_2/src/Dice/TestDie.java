@@ -95,7 +95,7 @@ public class TestDie{
 		
 		
 		Die D2 = new Die(4);
-		Die D3 = new Die(5);
+		Die D3 = new Die(4);
 		if (D2.equals(D3)){
 			System.out.println("The Dice match!");
 		} else {

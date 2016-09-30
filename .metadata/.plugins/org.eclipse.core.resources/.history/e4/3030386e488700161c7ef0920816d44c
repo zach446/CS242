@@ -1,0 +1,32 @@
+Zachary Heilman
+09/30/16
+Assignment 2
+
+For this assignment I have:
+Die Class - Which will run the dice rolling system
+TestDie Class - Which tests the Die Class to make sure that the probability is mildly correct
+LoadedDie Class - Which is an inheritance of the Die class.  It simulates rolling a loaded Die.
+DiceArray Class - Creates an array of dice rolls and sorts them.
+Die Constructor - Which initializes the global variables that will be used in later methods
+Die Constructor 2 - Initializes the global variables and brings in the user input.
+roll() method - Which simulates the rolling of a n-sided die and a loaded n-sided die
+getTop() method - Which obtains the top value of the die
+equals() method - Overrides the javalang.Object and determines if two separate die rolls are the same or not
+compareTo interface - Which is used to compare the methods between the superclass and subclasses
+toString method - Is used to print a string whenever the program is implemented
+hashCode method - Is used to evaluate the hashcode of the system.
+
+Testing Strategy:
+Just like assignment 1, the best way for me to test if my loadedDie class is working properly is to find the probability
+of rolling a weighted die.  USing the default constructor I know that the weight of getting a 2 is around 56%.  The tests shows 
+that 2 was more often than the other die heads. 
+
+The next thing to test is the equals method.  By equaling a constructor to another constructor I can see if they are
+equal.  
+
+There are some exception handling within my system.  At the end of my test class I implemented my constructors for the
+ Die class and the LoadedDie class with an incorrect amount of sides.  This caused an error message to be produced, ensuring that
+ the exception handling is working properly.  
+ 
+ The output of the test cases are:
+ 

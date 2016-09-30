@@ -14,7 +14,7 @@
 	<section name="javadoc">
 		<item value="public" key="access"/>
 		<item value="false" key="noindex"/>
-		<item value="C:\Users\Zachary\Documents\GitHub\CS242\Assignment_1\javadoc.xml" key="antpath"/>
+		<item value="C:\Users\Zachary\Documents\GitHub\CS242\Assignment_2\javadoc.xml" key="antpath"/>
 		<item value="false" key="nodeprecatedlist"/>
 		<item value="true" key="use"/>
 		<item value="true" key="author"/>
@@ -28,9 +28,14 @@
 		<item value="true" key="splitindex"/>
 		<item value="true" key="fromStandard"/>
 		<item value="false" key="notree"/>
-		<item value="C:\Users\Zachary\Documents\GitHub\CS242\Assignment_1\doc" key="destdir"/>
+		<item value="C:\Users\Zachary\Documents\GitHub\CS242\Assignment_2\doc" key="destdir"/>
 		<item value="false" key="openinbrowser"/>
 		<section name="projects">
+			<section name="Assignment_2">
+				<item value="C:\Users\Zachary\Documents\GitHub\CS242\Assignment_2\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Zachary\Documents\GitHub\CS242\Assignment_2\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
 			<section name="Class_Notes">
 				<item value="C:\Users\Zachary\Documents\GitHub\CS242\Class_Notes\javadoc.xml" key="antpath"/>
 				<item value="C:\Users\Zachary\Documents\GitHub\CS242\Class_Notes\doc" key="destdir"/>
