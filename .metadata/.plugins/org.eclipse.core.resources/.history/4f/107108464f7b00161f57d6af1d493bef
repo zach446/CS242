@@ -1,8 +1,0 @@
-package Shape_2_Abstract_Class;
-
-public class SolidTriangle extends Triangle{
-
-		public SolidTriangle(float base, float height){
-			super(base, height);
-		}
-}

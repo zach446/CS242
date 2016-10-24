@@ -51,6 +51,18 @@ public class Circle {
 				this.center.y == other.center.y;
 	}
 	
+	public int compareTo( Circle other){
+		int returnValue;
+		if (this.radius > other.radius){
+			returnValue = 1;
+		} else if(this.radius < other.radius){
+			returnValue = 0;
+		} else {
+			returnValue = -1;
+		}
+		return returnValue;
+	}
+	
 	// Overides the hascode of the constructor
 	// Refer to Lecture 5 Slides
 //	public int hashCode(){
@@ -62,7 +74,7 @@ public class Circle {
 	 * Can be found in Lecture 5 slides
 	 */
 	
-//	public String toString(){
-//		return "The circle has radius " + this.radius + ", center: (" + this.center.x + ", " + this.center.y + "), and area is: " + this.computeArea(); 
-//	}
+	public String toString(){
+		return "The circle has radius " + this.radius + ", center: (" + this.center.x + ", " + this.center.y + "), and area is: " + this.computeArea(); 
+	}
 }

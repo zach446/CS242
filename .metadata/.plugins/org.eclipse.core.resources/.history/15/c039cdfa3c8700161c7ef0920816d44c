@@ -1,0 +1,32 @@
+package Dice;
+
+import java.util.Arrays;
+
+public class DiceArray {
+	public static <T> void main(String[] args){
+		
+		int[] arry = new int[0];
+		
+		Die[] dice = new Die[3];
+		dice[0] = new Die(12);
+		dice[1] = new Die(12);
+		dice[2] = new Die(12);
+		
+		LoadedDie[] unfairDie = new LoadedDie[2];
+		unfairDie[0] = new LoadedDie(12, 2, 68);
+		unfairDie[1] = new LoadedDie(12, 5, 70);
+
+
+//		
+		for (int i = 0; i < dice.length; i++){
+			int val = dice[i].roll();
+			arry[i];
+		}
+		for(int j = 0; j < unfairDie.length; j++){
+			System.out.println(arry[i][j] + " ");
+		}
+		Arrays.sort(dice);
+		Arrays.sort(unfairDie);
+
+	}
+}

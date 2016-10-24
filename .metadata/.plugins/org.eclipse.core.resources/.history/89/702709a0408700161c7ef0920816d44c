@@ -1,0 +1,44 @@
+package Dice;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+public class DiceArray {
+	public static void main(String[] args){
+		
+		int Dn = 12;
+		Die[] dice = new Die[5];
+		dice[0] = new Die(Dn);
+		dice[1] = new Die(Dn);
+		dice[2] = new Die(Dn);
+//		Die[] unfairDie = new LoadedDie[2];
+		dice[3] = new LoadedDie(Dn, 2, 68);
+		dice[4] = new LoadedDie(Dn, 5, 70);
+
+		Die[] results = new Die[5];
+		for (int i = 0; i < dice.length; i++){
+			dice[i].roll();
+			results[i] = dice[i];
+			System.out.println(dice[i]);
+		}
+		for(int j = 0; j < unfairDie.length; j++){
+			unfairDie[j].roll();
+			results[j+dice.length] = unfairDie[j];
+			System.out.println(unfairDie[j]);
+		}
+		System.out.println("\n\n");
+		System.out.println(results[0]);
+		Arrays.sort(results);
+
+		for (int m = 0; m < results.length; m++){
+			System.out.println(results[m]);
+		}
+//		for (int m = 0; m < dice.length; m++){
+//			System.out.println(dice[m]);
+//		}
+//		for(int n = 0; n < unfairDie.length; n++){
+//			System.out.println(unfairDie[n]);
+//		}
+
+	}
+}

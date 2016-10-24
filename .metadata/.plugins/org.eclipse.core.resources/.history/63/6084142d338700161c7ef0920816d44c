@@ -1,0 +1,57 @@
+package Dice;
+/**
+ * @author Zachary
+ *
+ */
+import java.util.Random;  //Imports the Random Class
+
+/**
+ * 
+ * TestDie Class
+ * Used to test the Die Class
+ */
+public class TestDie{
+	public static void main(String [] args){
+		
+		int N = 1000; /*Simulates 100 die rolls*/
+		/*The following counters are to help find the probability of the die rolls*/
+		float oneCount = 0;
+		float twoCount = 0;
+		float threeCount = 0;
+		float fourCount = 0;
+		float fiveCount = 0;
+		float sixCount = 0;
+		Die D1 = new Die();
+
+		for(int i = 0; i < N; i++){/*SImulates each die roll*/
+		D1.roll();
+		int topVal = D1.getTop();
+		/*IF statement determines which counter to increment*/
+			if(topVal == 1){
+				oneCount = oneCount + 1;
+			} else if(topVal == 2) {
+				twoCount = twoCount + 1;
+			} else if(topVal == 3){
+				threeCount = threeCount + 1;
+			} else if (topVal == 4){
+				fourCount = fourCount + 1;
+			} else if(topVal == 5){
+				fiveCount = fiveCount + 1;
+			} else if(topVal == 6){
+				sixCount = sixCount + 1;
+			} else {
+				System.out.println("There was an unexpected error");
+			}
+		}
+		System.out.println("The value of 1/6 is .166");
+		System.out.println("The probability of getting a 1 is: " + oneCount/N);
+		System.out.println("The probability of getting a 2 is: " + twoCount/N);
+		System.out.println("The probability of getting a 3 is: " + threeCount/N);
+		System.out.println("The probability of getting a 4 is: " + fourCount/N);
+		System.out.println("The probability of getting a 5 is: " + fiveCount/N);
+		System.out.println("The probability of getting a 6 is: " + sixCount/N);
+		
+		LoadedDie L1 = new LoadedDie(2,2,56);
+		L1.roll();
+	}
+}

@@ -1,4 +1,7 @@
 package Circle_Notes;
+
+import java.util.Arrays;
+
 public class TestCircle {
 	public static void main (String[] args){
 		Circle C1 = new Circle(5.2f, 1, 3);
@@ -26,6 +29,17 @@ public class TestCircle {
 			System.out.println("The Circles are the same.");
 		} else {
 			System.out.println("The Circles are not the same.");
+		}
+		
+		Circle[] circles = new Circle[3];
+		circles[0] = new Circle(100.0f);
+		circles[1] = new Circle(.5f);
+		circles[2] = new Circle(2.0f);
+		
+		Arrays.sort( circles );
+		
+		for (int i = 0; i < circles.length; i++){
+			System.out.println("The value of of the Array is :" + circles);
 		}
 	}
 }

@@ -1,0 +1,36 @@
+package Dice;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+public class DiceArray {
+	public static void main(String[] args){
+		
+		int Dn = 12;
+		Die[] dice = new Die[3];
+		dice[0] = new Die(Dn);
+		dice[1] = new Die(Dn);
+		dice[2] = new Die(Dn);
+		LoadedDie[] unfairDie = new LoadedDie[2];
+		unfairDie[0] = new LoadedDie(Dn, 2, 68);
+		unfairDie[1] = new LoadedDie(Dn, 5, 70);
+
+		int[] results = new int[5];
+		for (int i = 0; i < dice.length; i++){
+			results[i] = dice[i].roll();
+			System.out.println(dice[i]);
+		}
+		for(int j = 0; j < unfairDie.length; j++){
+			results[j+dice.length] = unfairDie[j].roll();
+			System.out.println(unfairDie[j]);
+		}
+		System.out.println("\n\n");
+		Arrays.sort(results);
+		
+		for(int k = 0; k < results.length; k++){
+//		System.out.println("The value on the Die is " + results[k] + ". The number of sides on the Die are " + Dn +
+//				", and ");
+			System.out.println(results[k]);
+		}
+	}
+}

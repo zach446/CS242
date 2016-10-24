@@ -1,6 +1,6 @@
 /**
  * @author Zachary
- *
+ * date: 09/30/16
  */
 import java.util.Random;  //Imports the Random Class
 
@@ -11,6 +11,7 @@ import java.util.Random;  //Imports the Random Class
  */
 public class TestDie{
 	public static void main(String [] args){
+		
 		
 		int N = 1000; /*Simulates 100 die rolls*/
 		/*The following counters are to help find the probability of the die rolls*/

@@ -1,8 +1,0 @@
-package Shape;
-
-public class Rectangle extends Shape {
-	public Rectangle(){
-		super.shapeType = 2;
-	}
-
-}

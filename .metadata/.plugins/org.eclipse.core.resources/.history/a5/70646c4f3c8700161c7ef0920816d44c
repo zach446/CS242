@@ -1,0 +1,27 @@
+package Dice;
+
+import java.util.Arrays;
+
+public class DiceArray {
+	public static void main(String[] args){
+		
+		
+		Die[] Dice = new Die[3];
+		Dice[0] = new Die(12);
+		Dice[1] = new Die(12);
+		Dice[2] = new Die(12);
+		Die[] unfairDie = new LoadedDie[2];
+		unfairDie[0] = new LoadedDie(12, 2, 68);
+		unfairDie[1] = new LoadedDie(12, 5, 70);
+
+		Dice[0].roll();
+//		int[] combinedArrays = ArrayUtils.addAll(Dice, unfairDie);
+		for (int i = 0; i < Dice.length; i++){
+			);
+			System.out.println("The value of of the Array is :" + circles);
+		}
+		Arrays.sort(Dice);
+		Arrays.sort(unfairDie);
+		System.out.println(Dice + unfairDie);
+	}
+}
